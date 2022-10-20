@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelbras</title>
+  <link rel="icon" type="image/x-icon" href="/icon.gif">
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+  <header>
+    <img class="intelbras" src="/intelbras.png" alt="">
+    <ul>
+      <li><a href="/status.htm">Status</a></li>
+      <li><a href="/saida.htm">Comandos</a></li>
+      <li><a href="/sobre.htm">Sistema</a></li>
+      <li class="logout"> <a href="/index.htm"><img src="/logout.png" alt=""></a></li>
+    </ul>
+  </header>
+
+  <main>
+    <nav>
+      <ul>
+        <li class="active">
+          Status
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+
+      <h2>Status da fonte</h2>
+      <h4>Evento de falta de energia da rede eletrica nos ultimos 10 minutos:<span> Não</span></h4>
+
+      <h4>Modo de operação:<span> ~modoAC~</span></h4>
+      <h4>Tensão de saída:<span> ~tensaoSaida~</span></h4>
+      <h4>Corrente de saída:<span> ~correnteSaida~</span></h4>
+
+      <h2>Status de carregamento</h2>
+      <h4>Status da bateria:<span> Carregando</span></h4>
+      <h4>Tensão da bateria:<span> 45 volts</span></h4>
+      <h4>Corrente da bateria:<span> 1 amper</span></h4>
+      <h4 id='counter'>0</h4>
+    </div>
+
+    
+  </main>
+
+  
+ 
+
+</body>
+
+<script>
+  var counter = 0;
+
+  setInterval(function () {
+    ++counter
+    console.log(counter);
+    document.getElementById("counter").innerHTML = counter;
+    location = ''
+  }, 5000)
+
+</script>
+
+</html>

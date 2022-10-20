@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelbras</title>
+  <link rel="icon" type="image/x-icon" href="/icon.gif">
+  <link rel="stylesheet" href="/style.css">
+ 
+</head>
+
+<body>
+  <header>
+    <img class="intelbras" src="/intelbras.png" alt="">
+    <ul>
+      <li><a href="/status.htm">Status</a></li>
+      <li><a href="/saida.htm">Comandos</a></li>
+      <li><a href="/sobre.htm">Sistema</a></li>
+      <li class="logout"> <a href="/index.htm"><img src="/logout.png" alt=""></a></li>
+    </ul>
+  </header>
+
+  <main>
+    <nav>
+      <ul>
+        <li class="active"><a href="/saida.htm">Saída</a></li>
+        <li><a href="/reiniciar.htm">Reiniciar
+
+          </a></li>
+      </ul>
+    </nav>
+    <div class="content">
+
+      <h2>Saídas</h2>
+      <p>Através desse painel é possivel ativar e desativar a saída DC do aparelho.</p>
+
+      <div class="output">
+
+
+        <form method="get" action="saida.htm" id="controllerSaida">
+
+          <div class="box">
+            <div>
+              <strong>Ativar saída 1:</strong>
+              <select name="led1">
+                <option value="1" ~ledSelected(1,true)~>On</option>
+                <option value="0" ~ledSelected(1,false)~>Off</option>
+              </select>&nbsp;
+              <br />
+            </div>
+
+            <div>
+              <strong>Ativar saída 2:</strong>
+              <select name="led2">
+                <option value="1" ~ledSelected(2,true)~>On</option>
+                <option value="0" ~ledSelected(2,false)~>Off</option>
+              </select>&nbsp;
+              <br />
+            </div>
+          </div>
+          <div class="btn">
+            <button type="submit" form="controllerSaida" value="Save">Salvar</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </main>
+
+  </div>
+
+</body>
+
+</html>
