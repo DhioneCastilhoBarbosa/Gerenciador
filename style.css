@@ -2,24 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
+html, body{
+  height: 100%;
+}
 body{
   background: #fff;
   font-family: 'Helvetica Neue','Helvetica',Arial,sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  
   overflow: hidden;
 }
-
 
 header{
   background: #00A335;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+  overflow: hidden;
+  
+
 }
 
 a{
@@ -27,8 +32,8 @@ a{
 }
 
 header .intelbras{
-  width: 200px;
-  height: 50px;
+  width: 180px;
+  height: 40px;
   margin-left: 1rem;
 }
 header img{
@@ -45,7 +50,7 @@ header ul{
 header ul li{
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 18px;
   color: #FFFDFD;
   font-weight: bold;
   margin-left: 30px;
@@ -67,21 +72,45 @@ header ul li a{
 
 
 main{
+  
+  display:flex;
+  width: 100%;
+  height: 100%;
+  overflow:auto;
+  align-items:flex-start;
+  justify-content:center;
+
+}
+
+footer{
+  height: 50px;
+  width: 100%;
+  margin-top: -9%;
+  margin-bottom: 0;
+}
+footer div{
+  background: #000;
   display: flex;
- 
+  align-items: center;
+  justify-content: center;
+}
+
+footer div a {
+  color: #D9D9D9;
 }
 nav{
-  
+
   display: flex;
   align-items: center;
   flex-direction: column;
-
   min-width: 15vw;
   width: 15vw;
-  height: 100vh;
   background:#EBEEEE ;
   padding-top: 10px;
-  
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+
 }
 
 nav ul li.active
@@ -133,24 +162,26 @@ nav ul li a {
   display: flex;
   align-items:flex-start;
   flex-direction: column;
-  margin-left: 100px;
-  margin-top: 35px;
-  width: 65%;
+  justify-content:flex-start;
+  margin-left: 10rem;
+  margin-right: 6.25rem;
+  margin-top: 2.5rem;
+  height:auto;
+  padding-bottom: 5rem;
   
 }
 .content h2{
-
   color: #8B979F;
-  font-size: 36px;
+  font-size: 30px;
   text-shadow: 5px 5px 5px rgba(139,151,159,0.4);
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 18px;
   
 }
 
 .content h2:first-child{
-  margin-bottom: 20px;
-  margin-top: 0;
+  margin-bottom: 10px;
+  margin-top: -20px;
 } 
 .content h4{
   font-weight: bold;
@@ -189,7 +220,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 15%;
+  margin-top: 5rem;
   justify-content: center;
 }
 .product{
@@ -208,7 +239,7 @@ nav ul li a {
 form{
   width: 100%;
   height: auto;
-  margin-left: -80px;
+  
 }
 
 .btn{
@@ -216,15 +247,45 @@ form{
 }
 
 .box{
+  max-width: 49rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 3rem;
+  gap: 0.5rem;
   margin:0;
   padding: 0.85rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   background: #EBEEEE;
   border-radius: 5px;
+}
+.box table{
+  max-width:48rem;
+  border: 1;
+}
+.box table td {
+  width: 12.5rem;
+  text-align: center;
+  background:#fff;
+  
+}
+.box table td:nth-child(3n+1){
+  background:#D9D9D9;
+
+}
+
+.box table tr th:nth-child(1){
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+.box table tr th:nth-child(4){
+  border-radius: 0px 8px 8px 0px;
+}
+
+.box table tr th{
+  background:#D9D9D9;
+  height: 1.8rem;
+
 }
 
 .box select{
@@ -237,8 +298,6 @@ form{
   font-weight: bold;
   border: none;
   outline: none;
- 
-
 }
 
 .box select:hover{
@@ -288,7 +347,7 @@ button{
   width: 200px;
   height: 40px;
   margin-top: 30px;
-  margin-left: calc(50% + 10vw);
+  margin-left: calc(45% + 10vw);
 }
 
 button:hover {
@@ -296,35 +355,284 @@ button:hover {
   transition: 0.5s;
 }
 
-.swal-overlay {
-  display: flex;
-  align-items: center;
-  background-color: rgba(126, 133, 131, 0.45);
-}
 
-.swal-modal {
+
+.content-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  width: 44rem;
+  background: #EBEEEE;
+  border-radius: 8px;
+  padding: 1rem;
+  justify-content: center;
+
+}
+.box-status{
   display: flex;
   align-items: center;
   flex-direction: column;
-  text-align: center;
+  width: 10rem;
+  height: 7rem;
+  background: #87C984;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin: 0.2rem;
   
 }
 
 
-.swal-button {
-  width: 200px;
+.content-box #disabled .box-title img{
+  height: 65px;
+}
+
+
+.box-status p{
+  color: #EBEEEE;
+  font-size: 16px;
+  font-weight: bold;
+}
+.box-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  background: #EBEEEE;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding-right: 20%;
+  padding-left: 20%;
+}
+.box-title img{
+  margin-right: 20px;
+  width: 40px;
   height: 50px;
-  padding: 7px 19px;
-  border-radius: 2px;
-  background-color: #00a335;
-  font-size: 12px;
-  border:none;
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+.box-title p{
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+  
+}
+.line{
+  background: #FFFDFD;
+  width:40rem;
+  height: 2rem;
+  padding: 10px;
+}
+.box-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 8.5rem;
+  height: 4rem;
+}
+.box-content input{
+  height: 2rem;
+  width: 18rem;
+  border-radius: 0;
+  border: 4px solid #D9D9D9;
+  font-size: 16px;
+  text-align:center;
+  padding-left: 0;
+  color: #000;
 }
 
-.swal-button-hover {
-  background-color: #00a335;
+
+
+.box-content input::placeholder{
+color: #000;
 }
-.swal-button:not([disabled]):hover{background-color:#00863F}
+
+.box-data{
+  max-width: 49rem;
+  display: flex;
+  align-items:flex-end;
+  justify-content:center;
+  flex-direction:column;
+  gap: 0.5rem;
+  margin:0;
+  padding: 0.85rem;
+  padding-bottom: 3rem;
+  padding-right: 10rem;
+  background: #EBEEEE;
+  border-radius: 5px;
+}
+
+.box-data button{
+  margin-left:0;
+  margin-right: -100px;
+  width: 150px;
+  height: 40px;
+  margin-top:-100px ;
+}
+
+.btn-box button{
+  margin-left: 70%;
+}
 
 
+.box-wathdog{
+  max-width: 49rem;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap: 0.5rem;
+  margin:0;
+  padding: 0.85rem;
+  padding-right: 0rem;
+  background: #EBEEEE;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.box-SNMP{
+  max-width: 49rem;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap: 0.5rem;
+  margin:0;
+  padding: 0.85rem;
+  padding-right: 0rem;
+  background: #EBEEEE;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.box-content-wathdog{
+  display: flex;
+  align-items: center;
+  justify-content:left;
+  width: 100%;
+  padding-right: 8.5rem;
+  height: 2.5rem;
+}
+
+
+.box-content-wathdog .numberBox{
+  height: 2rem;
+  width: 7rem;
+  border-radius: 0;
+  border: 2px solid #D9D9D9;
+  font-size: 16px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 4px;
+  color: #000;
+  text-align:center;
+}
+
+.checkBox{
+  display: flex;
+  align-items: center;
+  margin-top: -13rem;
+  margin-bottom: 8rem;
+  margin-left: 35rem;
+}
+
+.checkBox_SNMP{
+  display: flex;
+  align-items: center;
+  margin-top: -24.5rem;
+  margin-bottom: 19rem;
+  margin-left: 35rem;
+}
+.title_SNMP{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+  background: #8B979F;
+  color: #EBEEEE;
+  margin-left: -0.9rem;
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 1rem;
+}
+
+input[type="checkbox"]{
+cursor: pointer;
+width: 20px;
+height: 20px;
+border: 1px solid #D9D9D9;
+}
+
+input[type="checkbox"]:hover{
+  border: 1px solid #00a335;
+}
+
+input[type="checkbox"]:checked{
+  background: #00863F;
+}
+
+.box-wathdog table{
+  width: 48rem;
+  border: 1;
+  margin-right: 0.8rem;
+}
+.box-wathdog table td {
+  width: 12.5rem;
+  text-align: center;
+  background:#fff;
+  
+}
+.box-wathdog table td:nth-child(2n+1){
+  background:#D9D9D9;
+}
+
+.box-wathdog table tr th:nth-child(1){
+  border-radius: 8px 0px 0px 8px;
+}
+
+
+.box-wathdog table tr th:nth-child(3){
+  border-radius: 0px 8px 8px 0px;
+}
+
+.box-wathdog table tr th{
+  background:#D9D9D9;
+  height: 1.8rem;
+}
+
+
+
+.box-wathdog table input[type="text"]{
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  color: #000;
+  padding-left: 0;
+  border:  1px solid #D9D9D9;
+  padding-bottom: 2px;
+}
+
+.box-wathdog table select{
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  background: #00a335;
+  Color: #EBEEEE;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+
+#configStatus{
+  width: 48rem;
+  margin-right: 1.3rem;
+  padding-left: 0.5rem;
+  
+}
+
+#configStatus tr td{
+  height: 1.8rem;
+}
